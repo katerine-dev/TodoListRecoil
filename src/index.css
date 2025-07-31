@@ -1,0 +1,187 @@
+/* ————— Variáveis de tema ————— */
+:root {
+  --bg: #1e1e1e;
+  --card: #2a2a2a;
+  --text: #eee;
+  --accent: #8E1616;
+}
+
+/* ————— Reset básico ————— */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ————— Estilos da página ————— */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ————— Container da app ————— */
+.app-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+/* ————— Título ————— */
+.title,
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+/* ————— Formulário de nova tarefa ————— */
+.todo-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.todo-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background: var(--card);
+  color: var(--text);
+}
+.todo-input:focus {
+  outline: 2px solid var(--accent);
+}
+.btn-add {
+  padding: 0 1rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+.btn-add:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ————— Caixa que envolve lista + filtros ————— */
+.todo-list-container {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* ————— Estatísticas (contador) ————— */
+.stats {
+  text-align: right;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ————— Filtros ————— */
+.todo-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.btn-filter {
+  background: transparent;
+  border: 1px solid var(--text);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text);
+}
+.btn-filter.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ————— Lista de tarefas ————— */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+  padding: 0.5rem;
+  margin-bottom: 0.4rem;
+  border-radius: 4px;
+}
+
+/* ————— Estado vazio ————— */
+.empty {
+  text-align: center;
+  padding: 1rem;
+  color: #999;
+}
+
+/* ————— Botão “Limpar concluídas” ————— */
+.btn-clear {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  background: #e63946;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ————— Marcação de item concluído ————— */
+.todo-item span.done {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* ————— Botão de remover ————— */
+.btn-remove {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ————— Checkbox customizado ————— */
+.todo-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid var(--text);
+  border-radius: 4px;
+  margin-right: 0.75rem;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.todo-item input[type="checkbox"]:hover {
+  border-color: var(--accent);
+}
+.todo-item input[type="checkbox"]:checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+.todo-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--text);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
