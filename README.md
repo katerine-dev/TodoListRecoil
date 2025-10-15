@@ -113,7 +113,7 @@ Arquivo do workflow: `.github/workflows/main.yml`
 
 ## 🖼️ Interface
 
-![App Screenshot](./public/Screenshot.png)
+![App Screenshot](./img/Screenshot.png)
 
 ---
 
